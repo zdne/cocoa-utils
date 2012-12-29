@@ -8,6 +8,13 @@
 
 #import "ZNAppDelegate.h"
 
+#pragma mark - Headers Build Verification
+
+#import "ZNLog.h"
+#import "ZNJSONObject.h"
+
+#pragma mark -
+
 @implementation ZNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

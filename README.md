@@ -16,3 +16,8 @@ Include in prefix file like so:
 	#endif
 
 ---
+
+## ZNJSONObject.h
+Protocol of an object that can be serialized and deserialized as a JSON.
+
+---

@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		BB922D1A168F0258000EED51 /* ZNLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNLog.h; sourceTree = "<group>"; };
 		BB922D1C168F02EF000EED51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BB922D63168F5D0E000EED51 /* ZNJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNJSONObject.h; sourceTree = "<group>"; };
 		BBA6230D168F002E000C7BAE /* HelloCocoaUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCocoaUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA62311168F002E000C7BAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBA62313168F002E000C7BAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +91,7 @@
 		BB922D19168F0258000EED51 /* cocoa-utils */ = {
 			isa = PBXGroup;
 			children = (
+				BB922D63168F5D0E000EED51 /* ZNJSONObject.h */,
 				BB922D1A168F0258000EED51 /* ZNLog.h */,
 			);
 			name = "cocoa-utils";
