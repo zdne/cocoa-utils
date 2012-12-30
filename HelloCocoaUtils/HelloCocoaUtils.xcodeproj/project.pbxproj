@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB922D1D168F02EF000EED51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB922D1C168F02EF000EED51 /* README.md */; };
+		BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */; };
 		BBA62312168F002E000C7BAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62311168F002E000C7BAE /* UIKit.framework */; };
 		BBA62314168F002E000C7BAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62313168F002E000C7BAE /* Foundation.framework */; };
 		BBA62316168F002E000C7BAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62315168F002E000C7BAE /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 		BB922D1A168F0258000EED51 /* ZNLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNLog.h; sourceTree = "<group>"; };
 		BB922D1C168F02EF000EED51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BB922D63168F5D0E000EED51 /* ZNJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNJSONObject.h; sourceTree = "<group>"; };
+		BBA3F5C21690A64300B914B3 /* ZNCoordinatedFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoordinatedFileManager.h; sourceTree = "<group>"; };
+		BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCoordinatedFileManager.m; sourceTree = "<group>"; };
 		BBA6230D168F002E000C7BAE /* HelloCocoaUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCocoaUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA62311168F002E000C7BAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBA62313168F002E000C7BAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,8 @@
 		BB922D19168F0258000EED51 /* cocoa-utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBA3F5C21690A64300B914B3 /* ZNCoordinatedFileManager.h */,
+				BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */,
 				BB922D63168F5D0E000EED51 /* ZNJSONObject.h */,
 				BB922D1A168F0258000EED51 /* ZNLog.h */,
 			);
@@ -291,6 +296,7 @@
 				BBA6231E168F002E000C7BAE /* main.m in Sources */,
 				BBA62322168F002E000C7BAE /* ZNAppDelegate.m in Sources */,
 				BBA6232E168F002E000C7BAE /* ZNViewController.m in Sources */,
+				BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

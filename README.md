@@ -4,7 +4,7 @@ Miscellaneous Cocoa (Touch) utilities and helpers.
 
 ---
 
-## ZNLog.h
+## ZNLog
 NSLog replacement. Supports two levels of logging: Debug `ZNLog()` and Release `ZNRLog()`. Includes entry  and exit logging helpers as well (`ZNLogEntry` and `ZNLogExit`). 
 
 Include in prefix file like so:
@@ -17,7 +17,13 @@ Include in prefix file like so:
 
 ---
 
-## ZNJSONObject.h
+## ZNJSONObject
 Protocol of an object that can be serialized and deserialized as a JSON.
 
 ---
+
+## ZNCoordinatedFileManager
+Asynchronous file manager for coordinated reading and writing. Supports `NSFilePresenter` and iCloud sandbox. With **every** completion handler called on the **main queue**.
+
+---
+
