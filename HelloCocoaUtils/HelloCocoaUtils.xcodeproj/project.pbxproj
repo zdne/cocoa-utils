@@ -25,6 +25,7 @@
 		BBA62338168F002F000C7BAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62313168F002E000C7BAE /* Foundation.framework */; };
 		BBA62340168F002F000C7BAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBA6233E168F002F000C7BAE /* InfoPlist.strings */; };
 		BBA62343168F002F000C7BAE /* HelloCocoaUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA62342168F002F000C7BAE /* HelloCocoaUtilsTests.m */; };
+		BBE8528C169186E100FE757F /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8528B169186E100FE757F /* NSDate+ISO8601.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		BBA6233F168F002F000C7BAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBA62341168F002F000C7BAE /* HelloCocoaUtilsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloCocoaUtilsTests.h; sourceTree = "<group>"; };
 		BBA62342168F002F000C7BAE /* HelloCocoaUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloCocoaUtilsTests.m; sourceTree = "<group>"; };
+		BBE8528A169186E100FE757F /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601.h"; sourceTree = "<group>"; };
+		BBE8528B169186E100FE757F /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 		BB922D19168F0258000EED51 /* cocoa-utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBE8528A169186E100FE757F /* NSDate+ISO8601.h */,
+				BBE8528B169186E100FE757F /* NSDate+ISO8601.m */,
 				BBA3F5C21690A64300B914B3 /* ZNCoordinatedFileManager.h */,
 				BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */,
 				BB922D63168F5D0E000EED51 /* ZNJSONObject.h */,
@@ -297,6 +302,7 @@
 				BBA62322168F002E000C7BAE /* ZNAppDelegate.m in Sources */,
 				BBA6232E168F002E000C7BAE /* ZNViewController.m in Sources */,
 				BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */,
+				BBE8528C169186E100FE757F /* NSDate+ISO8601.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

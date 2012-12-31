@@ -1,6 +1,6 @@
 //
 //  ZNJSONObject.h
-//  Passauthority
+//  cocoa-utils
 //
 //  Created by Zdenek Nemec on 7/27/12.
 //  Copyright (c) 2012 Passauthority.com. All rights reserved.
