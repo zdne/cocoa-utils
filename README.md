@@ -24,3 +24,12 @@ Simple ISO8601 NString to NSDate (and vice versa) formatter. Converts "2012-12-3
 
 ## ZNViewTools
 Provides tools to round corners of UIView and UIImage.
+
+## ZNPersistentCache
+Provides NSCache functionality shared in between app sessions. Object of `id<NSCoding>` are serialized into App's cache directory reused between sessions.
+
+Utilizing [jerolimov / NSHash](https://github.com/jerolimov/NSHash) for MD5 hashing cache keys and filenames.
+
+
+
+

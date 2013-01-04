@@ -1,0 +1,3 @@
+[submodule "NSHash"]
+	path = NSHash
+	url = git://github.com/jerolimov/NSHash.git
