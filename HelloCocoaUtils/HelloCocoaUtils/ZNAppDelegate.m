@@ -13,6 +13,7 @@
 #import "ZNLog.h"
 #import "ZNJSONObject.h"
 #import "ZNCoordinatedFileManager.h"
+#import "ZNViewTools.h"
 #import "NSDate+ISO8601.h"
 
 #pragma mark -

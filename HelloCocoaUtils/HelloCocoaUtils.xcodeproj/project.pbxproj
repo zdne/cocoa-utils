@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB71385F1696CB4F00954B40 /* ZNViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71385E1696CB4F00954B40 /* ZNViewTools.m */; };
 		BB922D1D168F02EF000EED51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB922D1C168F02EF000EED51 /* README.md */; };
 		BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */; };
 		BBA62312168F002E000C7BAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62311168F002E000C7BAE /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB71385D1696CB4F00954B40 /* ZNViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNViewTools.h; sourceTree = "<group>"; };
+		BB71385E1696CB4F00954B40 /* ZNViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNViewTools.m; sourceTree = "<group>"; };
 		BB922D1A168F0258000EED51 /* ZNLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNLog.h; sourceTree = "<group>"; };
 		BB922D1C168F02EF000EED51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BB922D63168F5D0E000EED51 /* ZNJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNJSONObject.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */,
 				BB922D63168F5D0E000EED51 /* ZNJSONObject.h */,
 				BB922D1A168F0258000EED51 /* ZNLog.h */,
+				BB71385D1696CB4F00954B40 /* ZNViewTools.h */,
+				BB71385E1696CB4F00954B40 /* ZNViewTools.m */,
 			);
 			name = "cocoa-utils";
 			path = "../cocoa-utils";
@@ -303,6 +308,7 @@
 				BBA6232E168F002E000C7BAE /* ZNViewController.m in Sources */,
 				BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */,
 				BBE8528C169186E100FE757F /* NSDate+ISO8601.m in Sources */,
+				BB71385F1696CB4F00954B40 /* ZNViewTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
