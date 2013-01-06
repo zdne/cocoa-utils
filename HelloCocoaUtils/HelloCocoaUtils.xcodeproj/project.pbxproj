@@ -176,9 +176,9 @@
 		BBA62317168F002E000C7BAE /* HelloCocoaUtils */ = {
 			isa = PBXGroup;
 			children = (
+				BBA62329168F002E000C7BAE /* MainStoryboard.storyboard */,
 				BBA62320168F002E000C7BAE /* ZNAppDelegate.h */,
 				BBA62321168F002E000C7BAE /* ZNAppDelegate.m */,
-				BBA62329168F002E000C7BAE /* MainStoryboard.storyboard */,
 				BBA6232C168F002E000C7BAE /* ZNViewController.h */,
 				BBA6232D168F002E000C7BAE /* ZNViewController.m */,
 				BBA62318168F002E000C7BAE /* Supporting Files */,
