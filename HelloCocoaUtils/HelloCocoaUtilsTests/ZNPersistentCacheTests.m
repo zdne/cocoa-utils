@@ -13,6 +13,8 @@
 
 static NSString * TestObject = @"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
 static NSString * TestObjectKey = @"org.zdne.testobject";
+static NSString * TestObjectKey2 = @"org.zdne.testobject2";
+static NSString * TestObjectKey3 = @"org.zdne.testobject3";
 
 @implementation ZNPersistentCacheTests
 
@@ -103,6 +105,71 @@ void Wait(dispatch_time_t wait)
                                              }];
     
     WaitForSemaphore(semaphore, DISPATCH_TIME_FOREVER);
+}
+
+- (void)testPurgeCache
+{
+    STAssertNoThrow([[ZNPersistentCache sharedCache] cacheObject:TestObject forKey:TestObjectKey2],
+                    @"adding object %@ must not throw", TestObjectKey2);
+    
+    Wait(2);
+    
+    STAssertNoThrow([[ZNPersistentCache sharedCache] purgeCacheWithMaximumAge:0],
+                    @"purgeCacheWithMaximumAge: must not throw");
+    
+    Wait(5);
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [[ZNPersistentCache sharedCache] cachedObjectForKey:TestObjectKey2
+                                             completion:^(id<NSCoding> object) {
+                                                 STAssertNil(object, @"key shouldn't exist");
+                                                 
+                                                 dispatch_semaphore_signal(semaphore);
+                                             }];
+    
+    WaitForSemaphore(semaphore, DISPATCH_TIME_FOREVER);
+}
+
+- (void)testPurgeCacheWithMaximumAge
+{
+    // 'old' object
+    STAssertNoThrow([[ZNPersistentCache sharedCache] cacheObject:TestObject forKey:TestObjectKey3],
+                    @"adding object %@ must not throw", TestObjectKey3);
+    
+    Wait(10); // make it old
+    
+    // 'new' object
+    STAssertNoThrow([[ZNPersistentCache sharedCache] cacheObject:TestObject forKey:TestObjectKey2],
+                    @"adding object %@ must not throw", TestObjectKey2);
+    
+    // purge 10 seconds old and older
+    STAssertNoThrow([[ZNPersistentCache sharedCache] purgeCacheWithMaximumAge:5],
+                    @"purgeCacheWithMaximumAge: must not throw");
+    
+    Wait(5);
+    
+    // Check that 'old' no longer exists
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [[ZNPersistentCache sharedCache] cachedObjectForKey:TestObjectKey3
+                                             completion:^(id<NSCoding> object) {
+                                                 STAssertNil(object, @"old object shouldn't exist");
+                                                 
+                                                 dispatch_semaphore_signal(semaphore);
+                                             }];
+    
+    WaitForSemaphore(semaphore, DISPATCH_TIME_FOREVER);
+    
+    // Check that 'new' is still present
+    semaphore = dispatch_semaphore_create(0);
+    [[ZNPersistentCache sharedCache] cachedObjectForKey:TestObjectKey2
+                                             completion:^(id<NSCoding> object) {
+                                                 STAssertNotNil(object, @"new object should exist");
+                                                 
+                                                 dispatch_semaphore_signal(semaphore);
+                                             }];
+    
+    WaitForSemaphore(semaphore, DISPATCH_TIME_FOREVER);
+    
 }
 
 @end

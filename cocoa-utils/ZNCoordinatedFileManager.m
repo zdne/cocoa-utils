@@ -152,4 +152,38 @@
     });
 }
 
+#pragma mark - Directory & File inquiries
+
+- (void)contentOfDirectoryAtURL:(NSURL *)url completion:(void (^)(NSArray *content, NSError *error))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error = nil;
+        NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:url
+                                                       includingPropertiesForKeys:nil
+                                                                          options:NSDirectoryEnumerationSkipsSubdirectoryDescendants |
+                                                                                    NSDirectoryEnumerationSkipsPackageDescendants |
+                                                                                    NSDirectoryEnumerationSkipsHiddenFiles
+                                                                            error:&error];
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(files, error);
+            });
+        }
+    });
+}
+
+- (void)attributesOfItemAtURL:(NSURL *)url completion:(void (^)(NSDictionary *attributes, NSError *error))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error = nil;
+        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[url path] error:&error];
+        
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(attributes, error);
+            });
+        }
+    });
+}
+
 @end

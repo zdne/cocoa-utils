@@ -20,4 +20,7 @@
 - (void)removeFileAtURL:(NSURL *)url completion:(void (^)(NSError *error))completion;
 - (void)moveSandboxFileAtURL:(NSURL *)sourceURL toiCloudURL:(NSURL *)targetURL completion:(void (^)(NSError *error))completion;
 
+- (void)contentOfDirectoryAtURL:(NSURL *)url completion:(void (^)(NSArray *content, NSError *error))completion;
+- (void)attributesOfItemAtURL:(NSURL *)url completion:(void (^)(NSDictionary *attributes, NSError *error))completion;
+
 @end

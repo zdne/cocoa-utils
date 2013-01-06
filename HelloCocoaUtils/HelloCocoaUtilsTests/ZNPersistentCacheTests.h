@@ -8,9 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-// NOTE: This is only very trival test for basic NSCache functionality.
-// It does not cover persistent store testing at all.
-
 @interface ZNPersistentCacheTests : SenTestCase
 
 @end

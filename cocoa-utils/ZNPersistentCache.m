@@ -45,7 +45,7 @@ static NSString * const PersistentCacheFileExtension = @"pcache";
     return self;
 }
 
-#pragma mark - NSCache
+#pragma mark - Caching
 
 - (void)cachedObjectForKey:(NSString *)key completion:(ZNPersistentCacheCompletionHandler)completionHandler
 {
@@ -88,6 +88,59 @@ static NSString * const PersistentCacheFileExtension = @"pcache";
     [self storeObject:object forKeyHash:keyHash];
 
     return;
+}
+
+#pragma mark - Purge
+
+- (void)purgeCacheWithMaximumAge:(NSTimeInterval)age
+{
+    __block ZNPersistentCache *blockSelf = self;
+    [self.fileManager contentOfDirectoryAtURL:[NSURL fileURLWithPath:self.cachePath]
+                                   completion:^(NSArray *content, NSError *error) {
+                                       
+                                       for (NSURL *url in content) {
+                                           NSString *keyHash = [ZNPersistentCache keyHashForFileURL:url];
+                                           if (![keyHash length])
+                                               continue;
+                                           
+                                           [blockSelf removeObjectForKeyHash:keyHash
+                                                                       atURL:url
+                                                                  maximumAge:age];
+                                       }
+                                   }];
+}
+
+- (void)removeObjectForKeyHash:(NSString *)keyHash atURL:(NSURL *)url maximumAge:(NSTimeInterval)age
+{
+    if (age == 0) {
+        [self.fileManager removeFileAtURL:url completion:nil];
+        [self removeObjectForKey:keyHash];
+        return;
+    }
+    
+    NSDate *dateTreshold = [[NSDate date] dateByAddingTimeInterval:-age];
+    __block ZNPersistentCache *blockSelf = self;
+    [self.fileManager attributesOfItemAtURL:url
+                                 completion:^(NSDictionary *attributes, NSError *error) {
+                                     NSDate *modificationDate = attributes[NSFileModificationDate];
+                                     if (error && !modificationDate)
+                                         return;
+
+                                     if ([modificationDate compare:dateTreshold] == NSOrderedAscending) {
+                                         [blockSelf.fileManager removeFileAtURL:url completion:nil];
+                                         [blockSelf removeObjectForKey:keyHash];
+                                     }
+                                     
+                                 }];
+}
+
++ (NSString *)keyHashForFileURL:(NSURL *)url
+{
+    if (![[url pathExtension] isEqualToString:PersistentCacheFileExtension])
+        return nil;
+
+    NSString *keyHash = [[url lastPathComponent] stringByDeletingPathExtension];
+    return keyHash;
 }
 
 #pragma mark - Persistent Store

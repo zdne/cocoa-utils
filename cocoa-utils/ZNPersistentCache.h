@@ -22,4 +22,10 @@ typedef void (^ZNPersistentCacheCompletionHandler)(id<NSCoding> object);
 // Replaces existing object for the same key if exists.
 - (void)cacheObject:(id<NSCoding>)object forKey:(NSString *)key;
 
+// Purges the cache.
+// Removes all items from cache including persistent store.
+// Takes optional age time interval. Only items older than this interval will
+// be purged.
+- (void)purgeCacheWithMaximumAge:(NSTimeInterval)age;
+
 @end
