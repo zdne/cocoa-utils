@@ -19,6 +19,11 @@
 // Serializes as a JSON object.
 - (id)JSONObject;
 
+@optional
+
+// Sets a JSON object
+- (void)setJSONObject:(id)object;
+
 @end
 
 // Normalizes JSON object (dictionary) returns NSDictionary or nil.
