@@ -3,7 +3,7 @@
 //  cocoa-utils
 //
 //  Created by Zdenek Nemec on 7/27/12.
-//  Copyright (c) 2012 Passauthority.com. All rights reserved.
+//  Copyright (c) 2012 zdne.org. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,3 +20,18 @@
 - (id)JSONObject;
 
 @end
+
+// Normalizes JSON object (dictionary) returns NSDictionary or nil.
+NSDictionary *ZNNormalizeJSONDictionaryObject(id object);
+
+// Normalizes JSON array object returns NSArray or nil.
+NSArray *ZNNormalizeJSONArrayObject(id object);
+
+// Normalizes JSON string object into either NSString or nil.
+NSString *ZNNormalizeJSONStringObject(id object);
+
+// Normalizes JSON string and converts it from ISO8601 format to NSDate.
+NSDate *ZNDateFromJSONStringObject(id object);
+
+// Normalizes JSON number object into either NSNumber or nil.
+NSNumber *ZNNormalizeJSONNumberObject(id object);
