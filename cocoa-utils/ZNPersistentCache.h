@@ -28,4 +28,8 @@ typedef void (^ZNPersistentCacheCompletionHandler)(id<NSCoding> object);
 // be purged.
 - (void)purgeCacheWithMaximumAge:(NSTimeInterval)age;
 
+// Retrieves last modification date of a cached object.
+// <completionHandler> object will be of NSDate type or nil.
+- (void)modificationDateForCachedObjectWithKey:(NSString *)key completion:(ZNPersistentCacheCompletionHandler)completionHandler;
+
 @end

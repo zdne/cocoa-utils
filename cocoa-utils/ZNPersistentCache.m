@@ -215,4 +215,38 @@ static NSString * const PersistentCacheFileExtension = @"pcache";
                          }];
 }
 
+
+- (void)modificationDateForCachedObjectWithKey:(NSString *)key completion:(ZNPersistentCacheCompletionHandler)completionHandler
+{
+    if (![key length]) {
+        if (completionHandler)
+            completionHandler(nil);
+        return;
+    }
+    
+    NSString *keyHash = [key MD5];
+    NSString *path = [self pathForKeyHash:keyHash];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        if (completionHandler)
+            completionHandler(nil);
+        return;
+    }
+    
+    [self.fileManager attributesOfItemAtURL:url
+                                 completion:^(NSDictionary *attributes, NSError *error) {
+                                     NSDate *modificationDate = attributes[NSFileModificationDate];
+                                     if (error && !modificationDate) {
+                                         if (completionHandler)
+                                             completionHandler(nil);
+                                         
+                                         return;
+                                     }
+                                     
+                                     if (completionHandler)
+                                         completionHandler(modificationDate);
+                                 }];
+}
+
 @end
