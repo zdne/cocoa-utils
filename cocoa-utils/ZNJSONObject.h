@@ -24,6 +24,10 @@
 // Sets a JSON object
 - (void)setJSONObject:(id)object;
 
+// Merges self with a JSON object.
+// Returns YES if some data were merged NO otherwise.
+- (BOOL)mergeJSONObject:(id)object;
+
 @end
 
 // Normalizes JSON object (dictionary) returns NSDictionary or nil.
