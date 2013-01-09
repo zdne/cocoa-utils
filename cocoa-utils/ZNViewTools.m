@@ -21,6 +21,9 @@
         [layer setBorderWidth:border];
         [layer setBorderColor:[borderColor CGColor]];
     }
+    else {
+        [layer setBorderWidth:0];
+    }
 }
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize cornerRadius:(CGFloat)cornerRadius
