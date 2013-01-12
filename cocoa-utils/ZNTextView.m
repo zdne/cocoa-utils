@@ -48,7 +48,7 @@ const CGFloat ZNUITextViewInternalInset = 8.0f; // lumberjack - internal UITextV
 - (void)initDefaults
 {
     self.drawPlaceholder = NO;
-    self.placeholderColor = [UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1.0];
+    self.placeholderColor = [UIColor lightGrayColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewTextDidChange:) name:UITextViewTextDidChangeNotification object:self];
 }
@@ -71,7 +71,7 @@ const CGFloat ZNUITextViewInternalInset = 8.0f; // lumberjack - internal UITextV
     [super drawRect:rect];
     
     if (_drawPlaceholder) {
-        CGRect placeholderTextRect = self.frame;
+        CGRect placeholderTextRect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
         placeholderTextRect = CGRectInset(placeholderTextRect, ZNUITextViewInternalInset, ZNUITextViewInternalInset);
         if (CGRectIntersectsRect(rect, placeholderTextRect)) {
             [_placeholderColor set];
