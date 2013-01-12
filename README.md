@@ -34,3 +34,6 @@ Utilizing [jerolimov / NSHash](https://github.com/jerolimov/NSHash) for MD5 hash
 
 ## ZNBlockActionSheet
 Simple block-based UIActionSheet implementation.
+
+## ZNTextView
+UITextView replacement that displays placeholder text.

@@ -16,6 +16,7 @@
 		BB7138861697033F00954B40 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7138841697033F00954B40 /* NSString+NSHash.m */; };
 		BB7138871697105A00954B40 /* NSData+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7138821697033F00954B40 /* NSData+NSHash.m */; };
 		BB7138881697105D00954B40 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7138841697033F00954B40 /* NSString+NSHash.m */; };
+		BB776F4716A1777F004AD461 /* ZNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB776F4616A1777F004AD461 /* ZNTextView.m */; };
 		BB922D1D168F02EF000EED51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB922D1C168F02EF000EED51 /* README.md */; };
 		BBA3F5C41690A64300B914B3 /* ZNCoordinatedFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA3F5C31690A64300B914B3 /* ZNCoordinatedFileManager.m */; };
 		BBA62312168F002E000C7BAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA62311168F002E000C7BAE /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 		BB7138831697033F00954B40 /* NSString+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSHash.h"; sourceTree = "<group>"; };
 		BB7138841697033F00954B40 /* NSString+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSHash.m"; sourceTree = "<group>"; };
 		BB71389516972D2800954B40 /* ZNPersistentCache+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZNPersistentCache+Private.h"; sourceTree = "<group>"; };
+		BB776F4516A1777F004AD461 /* ZNTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTextView.h; sourceTree = "<group>"; };
+		BB776F4616A1777F004AD461 /* ZNTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTextView.m; sourceTree = "<group>"; };
 		BB922D1A168F0258000EED51 /* ZNLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNLog.h; sourceTree = "<group>"; };
 		BB922D1C168F02EF000EED51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BB922D63168F5D0E000EED51 /* ZNJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNJSONObject.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				BB71386A1696DC7000954B40 /* ZNPersistentCache.m */,
 				BB71385D1696CB4F00954B40 /* ZNViewTools.h */,
 				BB71385E1696CB4F00954B40 /* ZNViewTools.m */,
+				BB776F4516A1777F004AD461 /* ZNTextView.h */,
+				BB776F4616A1777F004AD461 /* ZNTextView.m */,
 			);
 			name = "cocoa-utils";
 			path = "../cocoa-utils";
@@ -350,6 +355,7 @@
 				BB7138881697105D00954B40 /* NSString+NSHash.m in Sources */,
 				BB4A718C169F1B9F00951071 /* ZNBlockActionSheet.m in Sources */,
 				BB4A718D169F1B9F00951071 /* ZNJSONObject.m in Sources */,
+				BB776F4716A1777F004AD461 /* ZNTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
