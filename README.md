@@ -37,3 +37,6 @@ Simple block-based UIActionSheet implementation.
 
 ## ZNTextView
 UITextView replacement that displays placeholder text.
+
+## UITableView+Ext.h
+Extension to UITableView that hides empty row separators as well as offers block-based table updates including completion handler.
