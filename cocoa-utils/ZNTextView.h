@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-const CGFloat UITextViewInternalInset;
+extern const CGFloat ZNUITextViewInternalInset;
 
 @interface ZNTextView : UITextView
 
