@@ -14,8 +14,11 @@
 + (void)roundViewCorners:(UIView *)view radius:(CGFloat)radius border:(CGFloat)border borderColor:(UIColor *)borderColor
 {
     CALayer* layer = view.layer;
-    [layer setMasksToBounds:YES];
-    [layer setCornerRadius:radius];
+    
+    if (radius > 0) {
+        [layer setMasksToBounds:YES];
+        [layer setCornerRadius:radius];
+    }
     
     if (border > 0) {
         [layer setBorderWidth:border];
