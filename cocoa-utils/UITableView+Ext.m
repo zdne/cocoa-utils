@@ -23,17 +23,18 @@
 
 - (void)performUpdates:(void(^)())updates completion:(void(^)(BOOL finished))completion animated:(BOOL)animated
 {
+    __block UITableView *blockSelf = self;
     [UIView animateWithDuration:0.0 animations:^{
         
         if (!animated)
             [UIView setAnimationsEnabled:NO];
         
-        [self beginUpdates];
+        [blockSelf beginUpdates];
         
         if (updates)
             updates();
         
-        [self endUpdates];
+        [blockSelf endUpdates];
         
         if (!animated)
             [UIView setAnimationsEnabled:YES];
