@@ -75,7 +75,7 @@ const CGFloat ZNUITextViewInternalInset = 8.0f; // lumberjack - internal UITextV
         placeholderTextRect = CGRectInset(placeholderTextRect, ZNUITextViewInternalInset, ZNUITextViewInternalInset);
         if (CGRectIntersectsRect(rect, placeholderTextRect)) {
             [_placeholderColor set];
-            [_placeholderText drawInRect:placeholderTextRect withFont:self.font];
+            [_placeholderText drawInRect:placeholderTextRect withAttributes:@{NSFontAttributeName: self.font}];
         }
     }
 }
