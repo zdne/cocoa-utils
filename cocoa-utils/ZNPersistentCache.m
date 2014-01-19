@@ -148,7 +148,7 @@ static NSString * const PersistentCacheFileExtension = @"pcache";
 + (NSString*)cachePath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [paths objectAtIndex:0];
+    NSString *cachePath = paths[0];
     cachePath = [cachePath stringByAppendingPathComponent:PersistentCacheDirectoryName];
     BOOL isDir = NO;
     NSError *error = nil;
