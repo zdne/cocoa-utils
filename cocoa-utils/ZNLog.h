@@ -18,7 +18,7 @@
 #define ZNLogEntry
 #define ZNLogExit
 #define ZNLog(A, ...)
-#define ZNRLog(A, ...)  NSLog(@"ZN-R: %s:%d: %@",[NSString stringWithFormat:A, ## __VA_ARGS__])
+#define ZNRLog(A, ...)  NSLog(@"ZN-R: %@",[NSString stringWithFormat:A, ## __VA_ARGS__])
 #endif
 
 #endif
